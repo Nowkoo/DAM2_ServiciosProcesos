@@ -1,4 +1,4 @@
-package Tema2.A2;
+package Tema2.A2_hilos2;
 
 public class Primos {
     public static void primosRango(int inicio, int fin) {

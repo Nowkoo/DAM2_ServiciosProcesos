@@ -1,10 +1,9 @@
-package Tema2.A4;
+package Tema2.A4_reparto;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class E1_RepartoCiclico {
+public class E2_RepartoBloques {
     static int n;
     static int m;
 
@@ -44,8 +43,12 @@ public class E1_RepartoCiclico {
 
         @Override
         public void run() {
-            for (int i = threadId; i < n; i+= m) {
-                System.out.println("Soy el hilo " + threadId + ", imprimo el índice: " + i);
+            int blockSize = (n + m - 1) / m;
+            int ini = blockSize * threadId;
+            int fin = Math.min(ini + blockSize, n);
+
+            for (int i = ini; i < fin; i++) {
+                System.out.println("Soy el hilo " + threadId + ", digo el num " + i + " y el cuadrado es " + Math.pow(i, 2));
             }
         }
     }

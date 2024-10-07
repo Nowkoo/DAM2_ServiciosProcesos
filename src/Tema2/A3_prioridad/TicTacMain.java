@@ -1,4 +1,4 @@
-package Tema2.A3;
+package Tema2.A3_prioridad;
 
 public class TicTacMain {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Tema2.A1;
+package Tema2.A1_hilos1;
 
 public class MiTarea implements Runnable {
 
