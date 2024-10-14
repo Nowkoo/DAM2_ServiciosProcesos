@@ -7,11 +7,14 @@ public class Tienda {
         this.stock = stock;
     }
 
-    public boolean comprarProducto(int cantidadComprada) {
+    public synchronized void comprarProducto(int cantidadComprada, int cliente) {
         if (cantidadComprada < stock) {
             stock -= cantidadComprada;
-            return true;
+            System.out.println("Cliente " + cliente + " en el hilo " + Thread.currentThread().threadId() + " compró " + cantidadComprada + " productos.");
+            System.out.println("Stock disponible: " + stock);
+
+        } else {
+            System.out.println("Cliente " + cliente + " en el hilo " + Thread.currentThread().threadId() + " intentó comprar " + cantidadComprada + " productos, pero no hay suficiente stock.");
         }
-        return false;
     }
 }
